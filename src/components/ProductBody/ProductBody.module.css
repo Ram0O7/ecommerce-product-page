@@ -1,0 +1,15 @@
+.section-center {
+    margin-top: 5.5rem;
+    display: flex;
+    position: relative;
+}
+
+@media (max-width:480px) {
+    .section-center {
+        margin: 0;
+        margin-top: 3.5rem;
+        width: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

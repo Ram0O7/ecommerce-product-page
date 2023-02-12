@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import NavBar from './components/NavBar/NavBar';
 import './App.css';
+import ProductBody from './components/ProductBody/ProductBody';
 
-function App() {
+const App = () => {
+  const [cartShowing, setCartShowing] = useState(false);
+  const [showCartCount, setShowCartCount] = useState(0);
+
+  const cartItemCount = (count, action) => {
+    if (action === 'add') {
+      setShowCartCount(count);
+    } else if (showCartCount > 0) {      
+      if (action === 'increment') {
+        setShowCartCount(prevCount => prevCount + 1);
+      }
+      else if (action === 'decrement') {
+        if (showCartCount > 0) {
+          setShowCartCount(prevCount => prevCount - 1);
+        } else {
+          setShowCartCount(0);
+        }
+      } else {
+        setShowCartCount(0);
+      }
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main className='body-main'>
+      <NavBar showCart={() => setCartShowing(!cartShowing)} cartCount={showCartCount} />
+      <ProductBody showCart={cartShowing} cartItemCount={cartItemCount} />
+    </main>
+  )
 }
 
 export default App;

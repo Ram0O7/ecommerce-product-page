@@ -1,0 +1,122 @@
+.product-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 3rem 5rem 5rem 3.5rem;
+}
+
+.product-container .headings h3{
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    margin-bottom: 0.85rem;
+    font-size: 0.70rem;
+    color: var(--Orange);
+}
+
+.product-container .headings h1{
+    text-transform: capitalize;
+    font-size: 2.2rem;
+}
+
+.product-container .item-description{
+    color: var(--Dark-grayish-blue);
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.product-container .prices span:nth-child(1){
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.product-container .prices span:nth-child(2){
+    padding: 0.25rem;
+    background-color: var(--Pale-orange);
+    color: var(--Orange);
+    margin-left: 0.8rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.product-container .prices p{
+    font-size: 1rem;
+    color: var(--Dark-grayish-blue);
+    text-decoration: line-through;
+}
+
+.control-btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-btn,.amount-btn{
+    height: 2.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    gap: 1rem;
+    width: 15rem;
+    border:none;
+    color: white;
+    background-color: var(--Orange);
+}
+
+.cart-btn:hover{
+    cursor: pointer;
+    background-color: hsl(26,100%,65%)
+}
+
+.amount-btn{
+    justify-content: space-around;
+    width: 9.5rem;
+    background-color: var(--Light-grayish-blue);
+}
+
+.amount-btn button{
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--Orange);
+    font-weight: 900;
+}
+
+.amount-btn span{
+    color: #000;
+    font-size: larger;
+    font-weight: 800;
+}
+
+.cart-btn img{
+width: 1rem;
+height: 1rem;
+}
+
+@media (max-width:480px) {
+    .product-container, .control-btns{
+        width: 100%;
+        padding: 0;
+        gap: 1rem;
+        justify-content: space-between;
+    }
+    .product-container{
+        padding: 0.75rem 1.5rem;
+    }
+    .product-container .headings h1{
+        font-size: 2rem;
+    }
+    .product-container .prices{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .control-btns{
+        flex-direction: column;
+    }
+    .amount-btn, .cart-btn{
+        width: 100%;
+    }
+}
